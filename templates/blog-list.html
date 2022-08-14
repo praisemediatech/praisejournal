@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load template_tags %}
+{% block title %}Dream Journal - Blog post{% endblock %}
+
+{% block content %}
+		<!--Theme Options Start-->
+		<div class="style-options">
+			<div class="style-menu" data-simplebar>
+				<div class="theme-style">
+					<h4 class="mt-30 mb-10">Theme Style</h4>
+					<ul>
+						<li><a href="{% static 'static/css/style-dark.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M12.0700837,4.0003006 C11.3895108,5.17692613 11,6.54297551 11,8 C11,12.3948932 14.5439081,15.9620623 18.9299163,15.9996994 C17.5467214,18.3910707 14.9612535,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C12.0233848,4 12.0467462,4.00010034 12.0700837,4.0003006 Z" fill="#000000"/></g></svg> Dark</a>
+						</li>
+						<li><a href="{% static 'static/css/style-light.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" opacity="0.3" cx="12" cy="9" r="8"/><path d="M14.5297296,11 L9.46184488,11 L11.9758349,17.4645458 L14.5297296,11 Z M10.5679953,19.3624463 L6.53815512,9 L17.4702704,9 L13.3744964,19.3674279 L11.9759405,18.814912 L10.5679953,19.3624463 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M10,22 L14,22 L14,22 C14,23.1045695 13.1045695,24 12,24 L12,24 C10.8954305,24 10,23.1045695 10,22 Z" fill="#000000" opacity="0.3"/><path d="M9,20 C8.44771525,20 8,19.5522847 8,19 C8,18.4477153 8.44771525,18 9,18 C8.44771525,18 8,17.5522847 8,17 C8,16.4477153 8.44771525,16 9,16 L15,16 C15.5522847,16 16,16.4477153 16,17 C16,17.5522847 15.5522847,18 15,18 C15.5522847,18 16,18.4477153 16,19 C16,19.5522847 15.5522847,20 15,20 C15.5522847,20 16,20.4477153 16,21 C16,21.5522847 15.5522847,22 15,22 L9,22 C8.44771525,22 8,21.5522847 8,21 C8,20.4477153 8.44771525,20 9,20 Z" fill="#000000"/></g></svg> Light </a>
+						</li>
+					</ul>
+				</div>
+				<div class="theme-rtl">
+					<h4 class="mt-30 mb-10">LTR/RTL Style</h4>
+					<ul>
+						<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" opacity="0.3" x="4" y="5" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" x="4" y="13" width="16" height="2" rx="1"/><path d="M5,9 L13,9 C13.5522847,9 14,9.44771525 14,10 C14,10.5522847 13.5522847,11 13,11 L5,11 C4.44771525,11 4,10.5522847 4,10 C4,9.44771525 4.44771525,9 5,9 Z M5,17 L13,17 C13.5522847,17 14,17.4477153 14,18 C14,18.5522847 13.5522847,19 13,19 L5,19 C4.44771525,19 4,18.5522847 4,18 C4,17.4477153 4.44771525,17 5,17 Z" fill="#000000"/></g></svg> LTR </a>
+						</li>
+						<li><a href="rtl/blog-rtl-list.html"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M5,5 L19,5 C19.5522847,5 20,5.44771525 20,6 C20,6.55228475 19.5522847,7 19,7 L5,7 C4.44771525,7 4,6.55228475 4,6 C4,5.44771525 4.44771525,5 5,5 Z M5,13 L19,13 C19.5522847,13 20,13.4477153 20,14 C20,14.5522847 19.5522847,15 19,15 L5,15 C4.44771525,15 4,14.5522847 4,14 C4,13.4477153 4.44771525,13 5,13 Z" fill="#000000" opacity="0.3"/><path d="M11,9 L19,9 C19.5522847,9 20,9.44771525 20,10 C20,10.5522847 19.5522847,11 19,11 L11,11 C10.4477153,11 10,10.5522847 10,10 C10,9.44771525 10.4477153,9 11,9 Z M11,17 L19,17 C19.5522847,17 20,17.4477153 20,18 C20,18.5522847 19.5522847,19 19,19 L11,19 C10.4477153,19 10,18.5522847 10,18 C10,17.4477153 10.4477153,17 11,17 Z" fill="#000000"/></g></svg> RTL </a>
+						</li>
+					</ul>
+				</div>
+				<div class="style-nav">
+                    <h4 class="mt-30 mb-10">Menu Position</h4>
+                    <ul>
+						<li><a href="{% static 'static/css/settings/top-nav.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="2" y="5" width="19" height="4" rx="1"/><rect fill="#000000" opacity="0.3" x="2" y="11" width="19" height="10" rx="1"/></g></svg> Top</a></li>
+                        <li><a href="{% static 'static/css/settings/left-nav.css' %}">
+<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" ><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="9" y="5" width="13" height="14" rx="1.5"/><rect fill="#000000" opacity="0.3" x="2" y="5" width="5" height="14" rx="1"/></g></svg> Left</a></li>
+                        <li><a href="{% static 'static/css/settings/right-nav.css' %}">
+<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="2" y="5" width="13" height="14" rx="1.5"/><rect fill="#000000" opacity="0.3" x="17" y="5" width="5" height="14" rx="1"/></g></svg> Right</a></li>
+                        <li><a href="{% static 'static/css/settings/bottom-nav.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" style="transform: rotateZ(180deg);
+"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="2" y="5" width="19" height="4" rx="1"/><rect fill="#000000" opacity="0.3" x="2" y="11" width="19" height="10" rx="1"/></g></svg> Bottom</a></li>
+                    </ul>
+                </div>
+				<div class="box-style">
+					<h4 class="mt-30 mb-10">Box Style</h4>
+					<ul>
+						<li><a href="{% static 'static/css/settings/box/circle.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z M12,16 C14.209139,16 16,14.209139 16,12 C16,9.790861 14.209139,8 12,8 C9.790861,8 8,9.790861 8,12 C8,14.209139 9.790861,16 12,16 Z" fill="#000000"/><circle fill="#000000" opacity="0.3" cx="12" cy="12" r="1"/></g></svg> Circle</a>
+						</li>
+						<li><a href="{% static 'static/css/settings/box/hexagon.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M12.7442084,3.27882877 L19.2473374,6.9949025 C19.7146999,7.26196679 20.003129,7.75898194 20.003129,8.29726722 L20.003129,15.7027328 C20.003129,16.2410181 19.7146999,16.7380332 19.2473374,17.0050975 L12.7442084,20.7211712 C12.2830594,20.9846849 11.7169406,20.9846849 11.2557916,20.7211712 L4.75266256,17.0050975 C4.28530007,16.7380332 3.99687097,16.2410181 3.99687097,15.7027328 L3.99687097,8.29726722 C3.99687097,7.75898194 4.28530007,7.26196679 4.75266256,6.9949025 L11.2557916,3.27882877 C11.7169406,3.01531506 12.2830594,3.01531506 12.7442084,3.27882877 Z M12,14.5 C13.3807119,14.5 14.5,13.3807119 14.5,12 C14.5,10.6192881 13.3807119,9.5 12,9.5 C10.6192881,9.5 9.5,10.6192881 9.5,12 C9.5,13.3807119 10.6192881,14.5 12,14.5 Z" fill="#000000"/></g></svg> Hexagon</a>
+						</li>
+					</ul>
+				</div>
+				<div class="style-color mb-70">
+					<h4 class="mt-30 mb-10">Theme Color</h4>
+					<ul>
+						<li><a href="{% static 'static/css/settings/color/green-color.css' %}" style="background-color: #25ca7f;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/blue-color.css' %}" style="background-color: #00a3e1;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/red-color.css' %}" style="background-color: #d94c48;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/purple-color.css' %}" style="background-color: #bb68c8;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/sea-color.css' %}" style="background-color: #0dcdbd;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/yellow-color.css' %}" style="background-color: #eae328;"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Preloader -->
+		<div id="preloader">
+  			<div class="loading-area">
+    			<div class="circle"></div>
+  			</div>
+  			<div class="left-side"></div>
+  			<div class="right-side"></div>
+		</div>
+
+		<div class="header-mobile">
+        	<a class="header-toggle"><i class="fas fa-bars"></i></a>
+        	<h2>Baha</h2>
+        </div>
+
+		<!-- Left Block -->
+		<nav class="header-main" data-simplebar>
+
+			<!-- Logo -->
+			<!-- <div class="logo"> -->
+            	<img src="{% static 'static/img/praiselogo.png' %}" alt="">
+            <!-- </div> -->
+
+          	<ul>
+				<li data-tooltip="home" data-position="top">
+            		<a href="{% url 'index' %}" class="fa fa-home"></a>
+				</li>
+				<li>
+            		<span class="active fas fa-receipt"></span>
+				</li>
+          	</ul>
+		 </nav>
+
+		<!--Blog Page-->
+		<div class="blog-list" data-simplebar>
+			<div class="blog-head">
+				<h2>Blog List</h2>
+				<ul class="blog-breadcrumb">
+                	<li><a href="{% url 'index' %}">Home</a></li>
+                	<li>Blog List</li>
+				</ul>
+			</div>
+			<div class="row blog-list-container">
+				<div class="col-md-10 offset-md-1">
+					<div class="row">
+						<div class="col-md-8">
+                            {% for post in blog_list %}
+							<!--Blog Post-->
+							<div class="blog-post">
+                        		<div class="content">
+									<div class="thumbnail">
+                        				<!-- <a href="single-blog.html"> -->
+											<img src="{{ post.post_image.url }}" alt="">
+										<!-- </a> -->
+									</div>
+                            		<div class="detalis">
+                                		<ul class="meta">
+                                    		<li><i class="fa fa-calendar"></i>{{ post.date|date:"M d, Y" }}</li>
+                                    		<li><i class="icon fa fa-user"></i>Alex Smith</li>
+                                		</ul>
+                                		<h4><a href="{% url 'single_post' post.slug %}">{{ post.title }}</a></h4>
+                                		<div class="text">{{ post.content|truncatewords:10|safe }}</div>
+                                		<a href="{% url 'single_post' post.slug %}" class="btn-st">View More</a>
+									</div>
+								</div>
+                            </div>
+                            {% endfor %}
+
+							<!-- Pagination Blog -->
+							{% if is_paginated %}
+							<ul class="pagination">
+								{% if page_obj.has_previous %}
+									<li>
+										<a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+									</li>
+								{% endif %}
+								<!-- <li><a href="#">1</a></li> -->
+								{% for num in page_obj.paginator.page_range %}
+									{% if page_obj.number == num %}
+										<li class="active"><a href="?page={{ num }}">{{ num }}</a></li>
+									{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+										<li><a href="?page={{ num }}">{{ num }}</a></li>
+									{% endif %}
+								{% endfor %}
+								{% if page_obj.has_next %}
+								<li>
+							  		<a href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+								</li>
+								{% endif %}
+							</ul>
+							{% endif %}
+
+                        </div>
+
+						<div class="col-md-4">
+							<div class="side-left">
+
+								<!-- Search -->
+								<form class="search" action="">
+                        			<div class="input-group" id="autocomplete">
+                                		<div class="input-group-text">
+											<i class="fas fa-search"></i>
+										</div>
+											<input type="text" class="form-control" placeholder="search here..." name="title" id="id_title">
+									</div>
+                				</form>
+
+								<!-- Categories -->
+								<div class="categories">
+									<h4>Categories</h4>
+									<ul>
+										{% for cat in category %}
+											<li><a href="{% url 'catlist' cat.category %}">{{ cat.category }}</a></li>
+										{% endfor %}
+									</ul>
+								</div>
+
+								<!-- Recent News -->
+								<div class="news">
+									<h4>Latest Post</h4>
+									{% block latest %}
+										{% get_latest_post %}
+									{% endblock %}
+								</div>
+
+								<!-- Gallery -->
+								<!-- <div class="gallery">
+									<h4>Gallery</h4>
+									<ul>
+										<li><img src="img/blog/post/gallery/gallery-1.jpg" alt=""></li>
+										<li><img src="img/blog/post/gallery/gallery-2.jpg" alt=""></li>
+										<li><img src="img/blog/post/gallery/gallery-3.jpg" alt=""></li>
+										<li><img src="img/blog/post/gallery/gallery-4.jpg" alt=""></li>
+										<li><img src="img/blog/post/gallery/gallery-5.jpg" alt=""></li>
+										<li><img src="img/blog/post/gallery/gallery-6.jpg" alt=""></li>
+										<li><img src="img/blog/post/gallery/gallery-7.jpg" alt=""></li>
+										<li><img src="img/blog/post/gallery/gallery-8.jpg" alt=""></li>
+									</ul>
+								</div> -->
+
+								<!-- Archives -->
+								<!-- <div class="archives">
+									<h4>Archives</h4>
+									<ul>
+										<li><a href="#">August 2019</a></li>
+										<li><a href="#">July 2019</a></li>
+										<li><a href="#">June 2019</a></li>
+									</ul>
+								</div> -->
+
+								<!-- Tags -->
+								<div class="tags">
+									<h4>Tags</h4>
+									<ul>
+                                        {% for tag in tags %}
+										<li><a href="{% url 'taglist' tag.tag %}">{{ tag.tag }}</a></li>
+										{% endfor %}
+									</ul>
+								</div>
+
+							</div>
+						</div>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}

@@ -1,0 +1,533 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Praise Media{% endblock %}
+{% block content %}
+
+		<!--Theme Options Start-->
+		<div class="style-options">
+			<div class="style-menu" data-simplebar>
+				<div class="theme-style">
+					<h4 class="mt-30 mb-10">Theme Style</h4>
+					<ul>
+						<li><a href="{% static 'static/css/style-dark.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M12.0700837,4.0003006 C11.3895108,5.17692613 11,6.54297551 11,8 C11,12.3948932 14.5439081,15.9620623 18.9299163,15.9996994 C17.5467214,18.3910707 14.9612535,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C12.0233848,4 12.0467462,4.00010034 12.0700837,4.0003006 Z" fill="#000000"/></g></svg> Dark</a>
+						</li>
+						<li><a href="{% static 'static/css/style-light.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" opacity="0.3" cx="12" cy="9" r="8"/><path d="M14.5297296,11 L9.46184488,11 L11.9758349,17.4645458 L14.5297296,11 Z M10.5679953,19.3624463 L6.53815512,9 L17.4702704,9 L13.3744964,19.3674279 L11.9759405,18.814912 L10.5679953,19.3624463 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M10,22 L14,22 L14,22 C14,23.1045695 13.1045695,24 12,24 L12,24 C10.8954305,24 10,23.1045695 10,22 Z" fill="#000000" opacity="0.3"/><path d="M9,20 C8.44771525,20 8,19.5522847 8,19 C8,18.4477153 8.44771525,18 9,18 C8.44771525,18 8,17.5522847 8,17 C8,16.4477153 8.44771525,16 9,16 L15,16 C15.5522847,16 16,16.4477153 16,17 C16,17.5522847 15.5522847,18 15,18 C15.5522847,18 16,18.4477153 16,19 C16,19.5522847 15.5522847,20 15,20 C15.5522847,20 16,20.4477153 16,21 C16,21.5522847 15.5522847,22 15,22 L9,22 C8.44771525,22 8,21.5522847 8,21 C8,20.4477153 8.44771525,20 9,20 Z" fill="#000000"/></g></svg> Light </a>
+						</li>
+					</ul>
+				</div>
+				<div class="theme-rtl">
+					<h4 class="mt-30 mb-10">LTR/RTL Style</h4>
+					<ul>
+						<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" opacity="0.3" x="4" y="5" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" x="4" y="13" width="16" height="2" rx="1"/><path d="M5,9 L13,9 C13.5522847,9 14,9.44771525 14,10 C14,10.5522847 13.5522847,11 13,11 L5,11 C4.44771525,11 4,10.5522847 4,10 C4,9.44771525 4.44771525,9 5,9 Z M5,17 L13,17 C13.5522847,17 14,17.4477153 14,18 C14,18.5522847 13.5522847,19 13,19 L5,19 C4.44771525,19 4,18.5522847 4,18 C4,17.4477153 4.44771525,17 5,17 Z" fill="#000000"/></g></svg> LTR </a>
+						</li>
+						<li><a href="rtl/ind-rtl-image.html"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M5,5 L19,5 C19.5522847,5 20,5.44771525 20,6 C20,6.55228475 19.5522847,7 19,7 L5,7 C4.44771525,7 4,6.55228475 4,6 C4,5.44771525 4.44771525,5 5,5 Z M5,13 L19,13 C19.5522847,13 20,13.4477153 20,14 C20,14.5522847 19.5522847,15 19,15 L5,15 C4.44771525,15 4,14.5522847 4,14 C4,13.4477153 4.44771525,13 5,13 Z" fill="#000000" opacity="0.3"/><path d="M11,9 L19,9 C19.5522847,9 20,9.44771525 20,10 C20,10.5522847 19.5522847,11 19,11 L11,11 C10.4477153,11 10,10.5522847 10,10 C10,9.44771525 10.4477153,9 11,9 Z M11,17 L19,17 C19.5522847,17 20,17.4477153 20,18 C20,18.5522847 19.5522847,19 19,19 L11,19 C10.4477153,19 10,18.5522847 10,18 C10,17.4477153 10.4477153,17 11,17 Z" fill="#000000"/></g></svg> RTL </a>
+						</li>
+					</ul>
+				</div>
+				<div class="style-nav">
+                    <h4 class="mt-30 mb-10">Menu Position</h4>
+                    <ul>
+						<li><a href="{% static 'static/css/settings/top-nav.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="2" y="5" width="19" height="4" rx="1"/><rect fill="#000000" opacity="0.3" x="2" y="11" width="19" height="10" rx="1"/></g></svg> Top</a></li>
+                        <li><a href="{% static 'static/css/settings/left-nav.css' %}">
+<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" ><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="9" y="5" width="13" height="14" rx="1.5"/><rect fill="#000000" opacity="0.3" x="2" y="5" width="5" height="14" rx="1"/></g></svg> Left</a></li>
+                        <li><a href="{% static 'static/css/settings/right-nav.css' %}">
+<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="2" y="5" width="13" height="14" rx="1.5"/><rect fill="#000000" opacity="0.3" x="17" y="5" width="5" height="14" rx="1"/></g></svg> Right</a></li>
+                        <li><a href="{% static 'static/css/settings/bottom-nav.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" style="transform: rotateZ(180deg);
+"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><rect fill="#000000" x="2" y="5" width="19" height="4" rx="1"/><rect fill="#000000" opacity="0.3" x="2" y="11" width="19" height="10" rx="1"/></g></svg> Bottom</a></li>
+                    </ul>
+                </div>
+				<div class="box-body">
+					<h4 class="mt-30 mb-10">Box Style</h4>
+					<ul>
+						<li><a href="{% static 'static/css/settings/box/box.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M4,7 L20,7 L20,19.5 C20,20.3284271 19.3284271,21 18.5,21 L5.5,21 C4.67157288,21 4,20.3284271 4,19.5 L4,7 Z M10,10 C9.44771525,10 9,10.4477153 9,11 C9,11.5522847 9.44771525,12 10,12 L14,12 C14.5522847,12 15,11.5522847 15,11 C15,10.4477153 14.5522847,10 14,10 L10,10 Z" fill="#000000"/><rect fill="#000000" opacity="0.3" x="2" y="3" width="20" height="4" rx="1"/></g></svg> Box </a>
+						</li>
+						<li><a href="{% static 'static/css/settings/box/no-box.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M4,9.67471899 L10.880262,13.6470401 C10.9543486,13.689814 11.0320333,13.7207107 11.1111111,13.740321 L11.1111111,21.4444444 L4.49070127,17.526473 C4.18655139,17.3464765 4,17.0193034 4,16.6658832 L4,9.67471899 Z M20,9.56911707 L20,16.6658832 C20,17.0193034 19.8134486,17.3464765 19.5092987,17.526473 L12.8888889,21.4444444 L12.8888889,13.6728275 C12.9050191,13.6647696 12.9210067,13.6561758 12.9368301,13.6470401 L20,9.56911707 Z" fill="#000000"/><path d="M4.21611835,7.74669402 C4.30015839,7.64056877 4.40623188,7.55087574 4.5299008,7.48500698 L11.5299008,3.75665466 C11.8237589,3.60013944 12.1762411,3.60013944 12.4700992,3.75665466 L19.4700992,7.48500698 C19.5654307,7.53578262 19.6503066,7.60071528 19.7226939,7.67641889 L12.0479413,12.1074394 C11.9974761,12.1365754 11.9509488,12.1699127 11.9085461,12.2067543 C11.8661433,12.1699127 11.819616,12.1365754 11.7691509,12.1074394 L4.21611835,7.74669402 Z" fill="#000000" opacity="0.3"/></g></svg> No Box</a>
+						</li>
+					</ul>
+				</div>
+				<div class="box-title">
+					<ul>
+						<li><a href="{% static 'static/css/settings/title/title.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><path d="M3,19 L5,19 L5,21 L3,21 L3,19 Z M8,19 L10,19 L10,21 L8,21 L8,19 Z M13,19 L15,19 L15,21 L13,21 L13,19 Z M18,19 L20,19 L20,21 L18,21 L18,19 Z" fill="#000000" opacity="0.3"></path><path d="M10.504,3.256 L12.466,3.256 L17.956,16 L15.364,16 L14.176,13.084 L8.65000004,13.084 L7.49800004,16 L4.96000004,16 L10.504,3.256 Z M13.384,11.14 L11.422,5.956 L9.42400004,11.14 L13.384,11.14 Z" fill="#000000"></path></g></svg> Title</a>
+						</li>
+						<li><a href="{% static 'static/css/settings/title/no-title.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000"><rect x="0" y="7" width="16" height="2" rx="1"></rect><rect opacity="0.3" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000) " x="0" y="7" width="16" height="2" rx="1"></rect></g></g></svg> No Title</a>
+						</li>
+					</ul>
+				</div>
+				<div class="box-style">
+					<ul>
+						<li><a href="{% static 'static/css/settings/box/circle.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z M12,16 C14.209139,16 16,14.209139 16,12 C16,9.790861 14.209139,8 12,8 C9.790861,8 8,9.790861 8,12 C8,14.209139 9.790861,16 12,16 Z" fill="#000000"/><circle fill="#000000" opacity="0.3" cx="12" cy="12" r="1"/></g></svg> Circle</a>
+						</li>
+						<li><a href="{% static 'static/css/settings/box/hexagon.css' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M12.7442084,3.27882877 L19.2473374,6.9949025 C19.7146999,7.26196679 20.003129,7.75898194 20.003129,8.29726722 L20.003129,15.7027328 C20.003129,16.2410181 19.7146999,16.7380332 19.2473374,17.0050975 L12.7442084,20.7211712 C12.2830594,20.9846849 11.7169406,20.9846849 11.2557916,20.7211712 L4.75266256,17.0050975 C4.28530007,16.7380332 3.99687097,16.2410181 3.99687097,15.7027328 L3.99687097,8.29726722 C3.99687097,7.75898194 4.28530007,7.26196679 4.75266256,6.9949025 L11.2557916,3.27882877 C11.7169406,3.01531506 12.2830594,3.01531506 12.7442084,3.27882877 Z M12,14.5 C13.3807119,14.5 14.5,13.3807119 14.5,12 C14.5,10.6192881 13.3807119,9.5 12,9.5 C10.6192881,9.5 9.5,10.6192881 9.5,12 C9.5,13.3807119 10.6192881,14.5 12,14.5 Z" fill="#000000"/></g></svg> Hexagon</a>
+						</li>
+					</ul>
+				</div>
+				<div class="style-color mb-70">
+					<h4 class="mt-30 mb-10">Theme Color</h4>
+					<ul>
+						<li><a href="{% static 'static/css/settings/color/green-color.css' %}" style="background-color: #25ca7f;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/blue-color.css' %}" style="background-color: #00a3e1;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/red-color.css' %}" style="background-color: #d94c48;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/purple-color.css' %}" style="background-color: #bb68c8;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/sea-color.css' %}" style="background-color: #0dcdbd;"></a></li>
+						<li><a href="{% static 'static/css/settings/color/yellow-color.css' %}" style="background-color: #eae328;"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Preloader -->
+		<div id="preloader">
+  			<div class="loading-area">
+    			<div class="circle"></div>
+  			</div>
+  			<div class="left-side"></div>
+  			<div class="right-side"></div>
+		</div>
+
+		<!-- Main Site -->
+		<div id="home">
+  		<div id="about">
+    	<div id="resume">
+     	<!-- <div id="portfolio"> -->
+        <div id="blog">
+		<div id="contact">
+
+			<div class="header-mobile">
+                <a class="header-toggle"><i class="fas fa-bars"></i></a>
+                <h2 style="font-size: small;">PraiseJournal</h2>
+            </div>
+
+			<!-- Left Block -->
+			<nav class="header-main" data-simplebar>
+
+				<!-- Logo -->
+				<!-- <div class="logo"> -->
+            		<img src="{% static 'static/img/P.png' %}" alt="">
+            	<!-- </div> -->
+
+          		<ul>
+					<li data-tooltip="home" data-position="top">
+            			<a href="{% url 'index' %}" class="icon-h fa fa-home"></a>
+					</li>
+					<li data-tooltip="about" data-position="top">
+            			<a href="#about" class="icon-a fas fa-user-tie"></a>
+					</li>
+					<li data-tooltip="resume" data-position="top">
+            			<a href="#resume" class="icon-r fas fa-address-book"></a>
+					</li>
+					<!-- <li data-tooltip="portfolio" data-position="top">
+            			<a href="#portfolio" class="icon-p fas fa-briefcase"></a>
+					</li> -->
+					<li data-tooltip="blog" data-position="top">
+            			<a href="#blog" class="icon-b fas fa-receipt"></a>
+					</li>
+					<li data-tooltip="contact" data-position="bottom">
+						<a href="#contact" class="icon-c fas fa-envelope"></a>
+					</li>
+          		</ul>
+    			</a>
+			 </nav>
+
+			<!-- Home Section -->
+          	<div class="pt-home" style="background-image: url('static/static/img/home-bg.jpg')">
+            <!-- <div class="pt-home" src="{% static 'static/img/blog/home-bg.jpg' %}"> -->
+
+             	<section>
+
+					<!-- Banner -->
+					<div class="banner">
+  						<h1>Godwin Praise</h1>
+						<p class="cd-headline rotate-1">
+							<span>  I am a</span>
+							<span class="cd-words-wrapper">
+								<b class="is-visible">developer</b>
+								<b>writer</b>
+								<b>freelancer</b>
+							</span>
+						</p>
+					</div>
+
+					<!-- Social -->
+					<div class="social">
+            			<ul>
+                			<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                			<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                			<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            			</ul>
+        			</div>
+			  	</section>
+          	</div>
+			<!-- About Section -->
+			<div class="page pt-about" data-simplebar>
+				<section class="container">
+
+					<!-- Section Title -->
+					<div class="header-page mt-70 mob-mt">
+						<h2>About Me</h2>
+						<span></span>
+					</div>
+					<!-- Personal Info Start -->
+					<div class="row mt-100">
+						{% for data in about %}
+						<!-- Information Block -->
+						<div class="col-lg-12 col-sm-12">
+    						<div class="info box-1">
+								<div class="row">
+									<div class="col-lg-3 col-sm-4">
+										<div class="photo">
+											<img alt="" src="{{ data.image.url }}">
+										</div>
+									</div>
+									<div class="col-lg-9 col-sm-8">
+										<h4>{{ data.name }}</h4>
+										<div class="loc">
+											<i class="fas fa-map-marked-alt"></i>{{ data.location }}
+										</div>
+										<p>{{ data.about_content}}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+
+					<!-- Interests Row Start -->
+					<div class="row mt-100">
+
+						<!-- Header Block -->
+						<div class="col-md-12">
+							<div class="header-box mb-50">
+								<h3>My Interests</h3>
+							</div>
+						</div>
+						
+						<div class="col-lg-12 col-sm-12">
+							<div class="box-2">
+								<div class="row">
+									<!-- Interests Item -->
+									{% for data in interest %}
+									<div class="col-lg-3 col-sm-6">
+										<div class="inter-icon">
+                                     		<i class="{{ data.symbol }}"></i>
+                                    	 	<div class="desc-inter">
+												<h6>{{ data.interest }}</h6>
+                               	        	</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Service Row Start -->
+					<div class="row mt-100">
+
+						<!-- Header Block -->
+						<div class="col-md-12">
+							<div class="header-box mb-50">
+								<h3>Services</h3>
+							</div>
+						</div>
+						{% for data in services %}
+						<!-- Service Item -->
+						<div class="col-lg-6 col-sm-6">
+							<div class="service box-1 mb-40">
+								<i class="{{ data.symbol }}"></i>
+								<h4>{{ data.service }}</h4>
+								<p>{{ data.service_description }}</p>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+			  	</section>
+         	</div>
+
+			<!-- Resume Section -->
+          	<div class="page pt-resume" data-simplebar>
+            	<section class="container">
+
+					<!-- Section Title -->
+					<div class="header-page mt-70 mob-mt">
+						<h2>Resume</h2>
+    					<span></span>
+					</div>
+
+					<!-- Experience & Education Row Start -->
+					<div class="row mt-100">
+
+						<!-- Experience Column Start -->
+						<div class="col-lg-6 col-sm-12">
+
+							<!-- Header Block -->
+							<div class="header-box mb-50">
+								<h3>Experience</h3>
+							</div>
+							{% for info in experience %}
+							<div class="experience box-1">
+								<!-- Experience Item -->
+								<div class="item">
+									<div class="main">
+										<h4>Web Design</h4>
+										<p><i class="far fa-calendar-alt"></i>{{ info.date }} | Сompany Inc</p>
+									</div>
+									<p>{{ info.description }}</p>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+
+						<!-- Education Column Start -->
+						<div class="col-lg-6 col-sm-12">
+
+							<!-- Header Block -->
+							<div class="header-box mb-50 mob-box-mt">
+								<h3>Education</h3>
+							</div>
+
+							<div class="experience box-2">
+								
+								{% for info in education %}
+								<!-- Education Item -->
+								<div class="item">
+									<div class="main">
+										<h4>{{ info.qualification}}</h4>
+										<p><i class="far fa-calendar-alt"></i>{{ info.date }} | Computer Science</p>
+									</div>
+									<p>{{ info.description }}</p>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+
+					<!-- Work Process Row Start -->
+					<div class="row mt-100">
+
+						<!-- Header Block -->
+						<div class="col-md-12">
+							<div class="header-box mb-50">
+								<h3>My Working Process</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="box-2 work-process mb-100">
+						<div class="row">
+							<div class="col-lg-4 col-sm-12 ltr">
+
+                    			<!-- Working Process Item-->
+                          	 	<div class="single-wp width-sm process-1">
+									<p class="wp-step">01</p>
+									<h4 class="wp-title">Discuss idea</h4>
+									<p>I could describe these conceptions, also impress upon paper all that is living.</p>
+								</div>
+
+								<!-- Working Process Item-->
+								<div class="single-wp width-sm process-2">
+									<p class="wp-step">02</p>
+									<h4 class="wp-title">Creative concept</h4>
+									<p>I could describe these conceptions, also impress upon paper all that is living.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-4 hidden-sm">
+
+								<!-- Working Process Circle-->
+								<div class="wp-circle">
+									<h4>Working Process</h4>
+									<span class="dots top-l"></span>
+									<span class="dots bottom-l"></span>
+									<span class="dots top-r"></span>
+									<span class="dots bottom-r"></span>
+								</div>
+							</div>
+
+							<div class="col-lg-4 col-sm-12 rtl">
+
+								<!-- Working Process Item-->
+								<div class="single-wp width-sm process-3">
+									<p class="wp-step">03</p>
+									<h4 class="wp-title">Web concept</h4>
+									<p>I could describe these conceptions, also impress upon paper all that is living.</p>
+								</div>
+
+								<!-- Working Process Item-->
+								<div class="single-wp width-sm process-4">
+									<p class="wp-step">04</p>
+									<h4 class="wp-title">Final concept</h4>
+									<p>I could describe these conceptions, also impress upon paper all that is living.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+			  	</section>
+         	</div>
+
+			 <!-- Blog Section -->
+          	<div class="page pt-blog" data-simplebar>
+            	<section class="container">
+
+					<!-- Section Title -->
+             		<div class="header-page mt-70 mob-mt">
+						<h2>Blog</h2>
+    					<span></span>
+					</div>
+
+					<!-- Blog Row Start -->
+					<div class="row blog-masonry mt-100 mb-50">
+						{% for post in posts %}
+						<!-- Blog Item -->
+						<div class="col-lg-4 col-sm-6">
+							<div class="blog-item">
+								<div class="thumbnail">
+									<img alt="" src="{{ post.post_image.url }}">
+								</div>
+								<h4><a href="{% url 'single_post' post.slug %}">{{ post.title }}</a></h4>
+								<ul>
+                            		<li><a href="#">{{ post.date|date:"M d, Y" }}</a></li>
+									{% for item in post.tag.all %}
+                            		<li><a href="{% url 'taglist' item.tag %}">{{ item }}</a></li>
+									{% endfor %}
+                           		</ul>
+								<div class="blog-btn">
+									<a href="{% url 'single_post' post.slug %}" class="btn-st">Read More</a>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="row mt-100 mb-90">
+						<div class="col-lg-12 col-sm-12 text-center">
+							<a href="{% url 'blog_list' %}" class="btn-st">My Blog</a>
+						</div>
+					</div>
+					
+            	</section>
+			</div>
+
+			<!-- Contact Section -->
+         	<div class="page pt-contact" data-simplebar>
+            	<section class="container">
+
+					<!-- Section Title -->
+              		<div class="header-page mt-70 mob-mt">
+						{% include '_messages.html' %}
+						<h2>Contact</h2>
+    					<span></span>
+					</div>
+
+					<!-- Form Start -->
+					<div class="row mt-100">
+						<div class="col-lg-12 col-sm-12">
+							<div class="contact-form ">
+                        		<form method="post" class="box-1 contact-valid">
+									{% csrf_token %}
+									<div class="row">
+                            			<div class="col-lg-6 col-sm-12">
+                                			<input type="text" name="name" id="id_name" class="form-control" placeholder="Name *">
+                            			</div>
+                            			<div class="col-lg-6 col-sm-12">
+                                			<input type="email" name="email" id="id_email" class="form-control" placeholder="Email *">
+                            			</div>
+                            			<div class="col-lg-12 col-sm-12">
+                                			<textarea class="form-control" name="message" id="id_message" placeholder="Your Message"></textarea>
+                            			</div>
+                             			<div class="col-lg-12 col-sm-12 text-center">
+                                			<button type="submit" class="btn-st">Send Message</button>
+                                			<div id="loader">
+                                    			<i class="fas fa-sync"></i>
+                                			</div>
+                            			</div>
+									</div>
+                    			</form>
+                    		</div>
+						</div>
+					</div>
+
+					<!-- Contact Info -->
+					<div class="box-2 contact-info">
+						<div class="row">
+							<div class="col-lg-4 col-sm-12 info">
+								<i class="fas fa-paper-plane"></i>
+         						<p>example@example.com</p>
+          						<span>Email</span>
+							</div>
+							<div class="col-lg-4 col-sm-12 info">
+								<i class="fas fa-map-marker-alt"></i>
+         						<p>123 Lorem Ipsum, USA</p>
+          						<span>Addres</span>
+							</div>
+							<div class="col-lg-4 col-sm-12 info">
+								<i class="fas fa-phone"></i>
+         						<p>(+1) 123 456 7890</p>
+          						<span>Phone</span>
+							</div>
+						</div>
+					</div>
+
+
+
+					
+					<!-- Blog Section -->
+          	<div class="page pt-blog" data-simplebar>
+            	<section class="container">
+
+					<!-- Section Title -->
+             		<div class="header-page mt-70 mob-mt">
+						<h2>Blog</h2>
+    					<span></span>
+					</div>
+
+					<!-- Blog Row Start -->
+					<div class="row blog-masonry mt-100 mb-50">
+						{% for post in posts %}
+						<!-- Blog Item -->
+						<div class="col-lg-4 col-sm-6">
+							<div class="blog-item">
+								<div class="thumbnail">
+									<img alt="" src="{{ post.post_image.url }}">
+								</div>
+								<h4><a href="{% url 'single_post' post.slug %}">{{ post.title }}</a></h4>
+								<ul>
+                            		<li><a href="#">{{ post.date|date:"M d, Y" }}</a></li>
+									{% for item in post.tag.all %}
+                            		<li><a href="{% url 'taglist' item.tag %}">{{ item }}</a></li>
+									{% endfor %}
+                           		</ul>
+								<div class="blog-btn">
+									<a href="{% url 'single_post' post.slug %}" class="btn-st">Read More</a>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="row mt-100 mb-90">
+						<div class="col-lg-12 col-sm-12 text-center">
+							<a href="{% url 'blog_list' %}" class="btn-st">My Blog</a>
+						</div>
+					</div>
+					
+            	</section>
+			</div>
+
+					<!--Google Map Start-->
+					<div class="google-map box-1 mt-100 mb-100">
+						<div class="row">
+							<div class="col-lg-12">
+								<div id="map" data-latitude="40.712775" data-longitude="-74.005973" data-zoom="14"></div>
+							</div>
+						</div>
+					</div>
+            	</section>
+          	</div>
+
+        </div>
+      	</div>
+    	</div>
+  		</div>
+		</div>
+		</div>
+
+{% endblock %}

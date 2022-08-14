@@ -1,0 +1,15 @@
+<ul>
+    <!-- {% if latest %} -->
+    {% for post in latest %}
+    <li>
+        <div class="mess-img">
+            <img src="{{ post.post_image.url }}" alt="">
+        </div>
+        <div class="mess-info">
+            <h5><a href="{% url 'single_post' post.slug %}">{{ post.title }}</a></h5>
+            <p><i class="fa fa-calendar"></i>{{ post.date|date:"M d, Y"}}</p>
+        </div>
+    </li>
+    {% endfor %}
+    <!-- {% endif %} -->
+</ul>
