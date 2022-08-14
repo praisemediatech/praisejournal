@@ -132,7 +132,7 @@ class PostDetailView(View):
             new_comment = commentform.save(commit=False)
             new_comment.post = post
             new_comment.save()
-            messages.success(request, "Your comment has been sent successfully and it's been verified...")
+            messages.success(request, "Your comment is being verified...")
             return HttpResponseRedirect(reverse('single_post', args=[post.slug]))
         else:
             context['commentform'] = CommentForm()
