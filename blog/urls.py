@@ -3,8 +3,8 @@ from .views import HomeView, BlogList, TagList, CatList, PostDetailView
 from .import views
 
 urlpatterns = [
-    path('blog/<category>/', CatList.as_view(), name='catlist'),
     path('blog/<slug:slug>/', PostDetailView.as_view(), name='single_post'),
+    path('blog/category/<category>/', CatList.as_view(), name='catlist'),
     path('blog/tag/<tag>/', TagList.as_view(), name='taglist'),
     path('', HomeView.as_view(), name='index'),
     path('blog/', BlogList.as_view(), name='blog_list'),
