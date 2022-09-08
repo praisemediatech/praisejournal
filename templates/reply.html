@@ -80,17 +80,16 @@
 
 		<div class="header-mobile">
         	<a class="header-toggle"><i class="fas fa-bars"></i></a>
-        	<h2 style="font-family: 'Lucida handwriting'; text-transform: capitalize;">Dream Inc.</h2>
-        </div>
+			<h2 style="font-size: small;">PraiseJournal</h2>        
+		</div>
 
 		<!-- Left Block -->
 		<nav class="header-main" data-simplebar>
 
 			<!-- Logo -->
-			<div class="logo">
-            	<img src="img/logo.png" alt="">
+			<div class="logo" style="border-bottom: 5px solid #0e0f10; padding: 0 0;">
+            	<img src="{% static 'static/img/Profilelogo.png' %}" alt="">
             </div>
-
           	<ul>
 				<li data-tooltip="home" data-position="top">
             		<a href="{% url 'index' %}" class="fas fa-house-damage"></a>
@@ -125,15 +124,10 @@
                             {% csrf_token %}
 							<div class="row">
                             	<div class="col-lg-6 col-sm-12">
-                               		<!-- <input type="text" name="name" id="name" class="form-control" placeholder="Name *"> -->
 									<input type="text" name="name" class="form-control" required="" id="id_name" placeholder="Name ">
                             	</div>
-                            	<!-- <div class="col-lg-6 col-sm-12">
-                               		<input type="email" name="email" id="email" class="form-control" placeholder="Email *">
-									<input type="email" name="email" class="form-control" placeholder="Email " id="id_email">
-                            	</div> -->
+                            	
                             	<div class="col-lg-12 col-sm-12">
-                                	<!-- <textarea class="form-control" name="note"  id="note" placeholder="Your Message"></textarea> -->
 									<textarea name="reply" id="id_reply" class="form-control" placeholder="Your Message"></textarea>
                             	</div>
                              	<div class="col-lg-12 col-sm-12 text-center">
@@ -142,17 +136,6 @@
                               			<i class="fas fa-sync"></i>
                                		</div>
                             	</div>
-								<!-- <div class="col-lg-12 col-sm-12">
-                            		<div class="error-messages">
-										<div id="error">
-											<i class="far fa-times-circle"></i>
-										</div>
-                                		<div id="success">
-											<i class="far fa-check-circle"></i>Thank you, your message has been sent.
-										</div>
-									</div>
-
-                            	</div> -->
 							</div>
                     	</form>
                    	</div>

@@ -35,6 +35,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_quill',
+    'ckeditor',
     'jazzmin',
     'blog.apps.BlogConfig',
     'resume.apps.ResumeConfig',
@@ -160,12 +162,12 @@ MEDIA_ROOT = BASE_DIR / 'static/media'
 
 # Email Configurations
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ptmedia24@gmailcom'
-EMAIL_HOST_PASSWORD = '07063893318'
-EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "postmaster@sandbox86734a78f995432f8c3d5eddad6c96ad.mailgun.org"
+EMAIL_HOST_PASSWORD = "685c1ff3f7c7636265565e39164476b4-4dd50799-33666436"
 
 
 HITCOUNT_KEEP_HIT_ACTIVE = { 'days': 1 }
@@ -187,13 +189,19 @@ JAZZMIN_UI_TWEAKS = {
 
 # HTTPS CONFIGURATION
 
-#SESSION_COOKIE_SECURE = True
-#CSRF_COOKIE_SECURE = True
-#SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
 # HSTS SETTINGS
-#SECURE_HSTS_SECONDS = 31536000
-#SECURE_HSTS_PRELOAD = True
-#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 
+CKEDITOR_CONFIGS = {
+    'default': {
+         'height': 100,
+         'width': 450,
+    },
+}

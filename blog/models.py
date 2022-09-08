@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 from django.template.defaultfilters import slugify 
+from ckeditor.fields import RichTextField
 
 class Tag(models.Model):
     tag = models.CharField(max_length=50)
@@ -27,14 +28,15 @@ class Post(models.Model):
     tag = models.ManyToManyField(Tag)
     date = models.DateTimeField(auto_now_add=True)
     section_one = models.TextField()
-    section_two = models.TextField()
+    section_two = RichTextField()
+    # section_three = RichTextField(null=True, blank=True)
     post_image = models.ImageField(upload_to='', null=True, blank=True)
     quote = models.CharField(max_length=500, null=True, blank=True)
     quote_image = models.ImageField(upload_to='', null=True, blank=True)
     quote_author = models.CharField(max_length=50, default='Praise Media')
     slug = models.SlugField(blank=True, unique=True)
-    # author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # id = models.PositiveIntegerField(editable=False, primary_key=True)
+    author = models.CharField(max_length=100, default='PraiseMedia')
+
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
@@ -52,7 +54,6 @@ class Comment(models.Model):
     comment = models.TextField(blank=True)
     created = models.DateTimeField(auto_now=True)
     verified = models.BooleanField(default=False)
-    id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
 
     def __str__(self):
         return self.comment
@@ -64,8 +65,7 @@ class Reply(models.Model):
     comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
     reply = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
-    verified = models.BooleanField(default=True)
+    verified = models.BooleanField(default=False)
 
 
     class Meta:

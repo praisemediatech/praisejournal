@@ -13,8 +13,8 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug':('title',)}
 
     fieldsets = [
-        ('Post Information',    {'fields': ['title', 'category', 'tag']}),
-        ('Content',             {'fields': ['post_image', 'section_one', 'quote', 'quote_author','quote_image','section_two', ]}),
+        ('Post Information',    {'fields': ['title', 'category', 'tag', 'author']}),
+        ('Content',             {'fields': ['post_image', 'section_one', 'quote', 'quote_author','quote_image','section_two']}),
         ('Other Information',   {'fields': ['slug']}),
     ]
 

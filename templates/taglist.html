@@ -71,16 +71,16 @@
 
 		<div class="header-mobile">
         	<a class="header-toggle"><i class="fas fa-bars"></i></a>
-        	<h2>Baha</h2>
-        </div>
+			<h2 style="font-size: small;">PraiseJournal</h2>        
+		</div>
 
 		<!-- Left Block -->
 		<nav class="header-main" data-simplebar>
 
 			<!-- Logo -->
-			<!-- <div class="logo"> -->
-            	<img src="{% static 'static/img/P.png' %}" alt="">
-            <!-- </div> -->
+			<div class="logo" style="border-bottom: 5px solid #0e0f10; padding: 0 0;">
+            	<img src="{% static 'static/img/Profilelogo.png' %}" alt="">
+            </div>
 
           	<ul>
 				<li data-tooltip="home" data-position="top">
@@ -116,8 +116,8 @@
 									</div>
                             		<div class="detalis">
                                 		<ul class="meta">
-                                    		<li><i class="fa fa-calendar"></i>{{ i.date|date:"M d, Y" }}</li>
-                                    		<li><i class="icon fa fa-user"></i>Alex Smith</li>
+                                    		<li><i class="fa fa-calendar"></i>{{ post.date|date:"M d, Y" }}</li>
+                                    		<li><i class="icon fa fa-user"></i>{{ post.author }}</li>
                                 		</ul>
                                 		<h4><a href="{% url 'single_post' post.slug %}">{{ post.title }}</a></h4>
                                 		<div class="text">{{ post.content|truncatewords:10|safe }}</div>

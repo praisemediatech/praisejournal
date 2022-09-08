@@ -1,9 +1,12 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+
+
 
 class About(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     location = models.CharField(max_length=100, null=True, blank=True)
-    about_content = models.TextField()
+    about_content = RichTextField()
     image = models.ImageField(upload_to='', null=True, blank=True)
 
     def __str__(self):

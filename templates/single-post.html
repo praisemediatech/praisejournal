@@ -79,17 +79,16 @@
 
 		<div class="header-mobile">
         	<a class="header-toggle"><i class="fas fa-bars"></i></a>
-        	<h2>Baha</h2>
-        </div>
+			<h2 style="font-size: small;">PraiseJournal</h2>        
+		</div>
 
 		<!-- Left Block -->
 		<nav class="header-main" data-simplebar>
 
 			<!-- Logo -->
-			<!-- <div class="logo"> -->
-            	<img src="{% static 'static/img/P.png' %}" alt="">
-            <!-- </div> -->
-
+			<div class="logo" style="border-bottom: 5px solid #0e0f10; padding: 0 0;">
+            	<img src="{% static 'static/img/Profilelogo.png' %}" alt="">
+            </div>
           	<ul>
 				<li data-tooltip="home" data-position="top">
             		<a href="{% url 'index' %}" class="fa fa-home"></a>
@@ -109,6 +108,7 @@
 		 </nav>
 
 		<!--Blog Page-->
+		
 		<div class="blog-page" data-simplebar>
 			<div class="blog-image">
 				<img src="/static/static/img/blog/blog-page-img.jpg" alt="">
@@ -126,12 +126,14 @@
 					</div>
 
 					<!-- Content -->
+
 					<div class="blog-content">
 						<p>{{ post.section_one }}</p>
 						<blockquote>{{ post.quote }}
 							<span><img src="{{ post.quote_image.url }}" alt="">{{ post.quote_author}}</span>
 						</blockquote>
-						<p>{{ post.section_two }}</p>
+						{{ post.section_two|safe }}
+						<!-- <p>{{ post.section_three|safe }}</p> -->
 					</div>
 
 					<!-- Comments -->
@@ -153,7 +155,7 @@
 								</div>
 								{% for reply in comment.reply_set.all %}
 								<ul>
-									{% if reply.reply and reply.verified %}
+									{% if reply.reply and reply.verified or user.is_superuser %}
 									<li>
 										<div class="author-img">
 											<img src="img/blog/authors/author-2.png" alt="">

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views.generic import ListView, DetailView
 from .models import Post, Tag, Comment, Reply, Categories
 from django.http import HttpResponseRedirect
@@ -11,7 +11,8 @@ from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail
 from contact.forms import ContactForm
-
+from contact.models import ContactInfo
+from contact.models import SocialMediaHandles
 from hitcount.views import HitCountDetailView
 from hitcount.models import HitCount
 from hitcount.utils import get_hitcount_model
@@ -33,24 +34,20 @@ class HomeView(View):
         context['experience'] = Experience.objects.all()
         context['education'] = Education.objects.all()
         context['services'] = Services.objects.all()
+        context['socialmedia'] = SocialMediaHandles.objects.all()
         context['contactform'] = ContactForm
+        context['contact_info'] = ContactInfo.objects.all()
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
         context = dict()
         contactform = ContactForm(request.POST or None)
         if contactform.is_valid():
-            name = contactform.cleaned_data['name']
-            content = contactform.cleaned_data['message']
-            emailFrom = contactform.cleaned_data['email']
-            subject = 'message from DreamJournal.com'
-            message = f'{name}/n{content}'
-            emailTo = [settings.EMAIL_HOST_USER]
-            send_mail(subject, message, emailFrom, emailTo, fail_silently=True)
+            contactform.save()
             messages.success(request, "Thanks for contacting us. Your message have been sent...")
+            return redirect('index')
         else:
             messages.success(request, "Something went wrong. Message not sent.")
-            context['contactform'] = contactform 
         return render(request, self.template_name, context)
 
 
@@ -77,28 +74,6 @@ class BlogList(ListView):
                 return Post.objects.all()
         return queryset
 
-# def postDetail(request, pk):
-#     context = dict()
-#     template_name = 'single-post.html'
-#     post = get_object_or_404(Post, slug=pk)
-#     context['comment'] = post.comment_set.filter(verified=True)
-#     context['comment_count'] = post.comment_set.filter(post=post).count()
-#     context['post'] = post
-#     # context['gallery'] = Gallary.objects.all()
-#     context['commentform'] = CommentForm()
-#     if request.method == 'POST':
-#         commentform = CommentForm(request.POST or None)
-#         new_comment = None
-#         if commentform.is_valid():
-#             # messages.success(request, 'Error occurred while sending email. Please try again later.')
-#             new_comment = commentform.save(commit=False)
-#             new_comment.post = post
-#             new_comment.save()
-#             return HttpResponseRedirect(reverse('single_post', args=[post.slug]))
-#         else:
-#             context['commentform'] = CommentForm()
-#             # messages.success(request, 'Thank you, your message has been sent.')
-#     return render(request, template_name, context)
 
 
 class PostDetailView(View):
@@ -141,19 +116,19 @@ class PostDetailView(View):
         
 
 
-def commentReply(request, pk):
+def commentReply(request, pk, **kwargs):
     template_name = 'reply.html'
     context = dict()
     comment = get_object_or_404(Comment, id=pk)
     context['replyform'] = ReplyForm()
     if request.method == 'POST':
-        replyform = ReplyForm(request.POST or None)
+        replyform = ReplyForm(request.POST or None) 
         new_reply = None
         if replyform.is_valid():
             new_reply = replyform.save(commit=False)
             new_reply.comment = comment
             replyform.save()
-            return HttpResponseRedirect(reverse('single_post', args=[comment.post.id]))
+            return redirect(reverse('single_post', kwargs={'slug':comment.post.slug}))
     return render(request, template_name, context)
 
 
@@ -189,18 +164,4 @@ class CatList(ListView):
         return Post.objects.filter(category=category)
 
 
-
-
-
-# API
-# from rest_framework.views import APIView
-# from rest_framework.response import Response
-# from .serializer import PostSerializer
-# from rest_framework .generics import ListAPIView
-
-# class TestView(ListAPIView):
-#     serializer_class = PostSerializer
-#     context_object_name = 'objs'
-
-    
 
