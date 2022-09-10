@@ -1,1 +1,5 @@
-  
+django
+whitenoise
+django-hitcount
+django-jazzmin
+django-ckeditor
