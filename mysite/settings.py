@@ -156,19 +156,19 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = BASE_DIR / 'static/static-only'
+STATIC_ROOT = BASE_DIR / 'static-only'
 
 MEDIA_ROOT = BASE_DIR / 'static/media'
 
 
 # Email Configurations
 
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.mailgun.org"
-EMAIL_PORT = 2525
-EMAIL_HOST_USER = "postmaster@sandbox86734a78f995432f8c3d5eddad6c96ad.mailgun.org"
-EMAIL_HOST_PASSWORD = "685c1ff3f7c7636265565e39164476b4-4dd50799-33666436"
+# EMAIL_USE_TLS = True
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = "smtp.mailgun.org"
+# EMAIL_PORT = 2525
+# EMAIL_HOST_USER = "postmaster@sandbox86734a78f995432f8c3d5eddad6c96ad.mailgun.org"
+# EMAIL_HOST_PASSWORD = "685c1ff3f7c7636265565e39164476b4-4dd50799-33666436"
 
 
 HITCOUNT_KEEP_HIT_ACTIVE = { 'days': 1 }
