@@ -27,15 +27,15 @@ with open(BASE_DIR / 'secrete_key.txt') as f:
 SECRET_KEY = 'django-insecure-bd55ya1ww^sk^*t1tt@z*ia$tl_i#(588d&zx-fwu@77z#3^x('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+ 
 # Application definition
 
 INSTALLED_APPS = [
-    'django_quill',
+    'whitenoise.runserver_nostatic',
     'ckeditor',
     'jazzmin',
     'blog.apps.BlogConfig',
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -189,14 +190,14 @@ JAZZMIN_UI_TWEAKS = {
 
 # HTTPS CONFIGURATION
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
 
 # HSTS SETTINGS
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 
 CKEDITOR_CONFIGS = {
